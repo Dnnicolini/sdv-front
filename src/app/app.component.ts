@@ -1,13 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { initFlowbite } from 'flowbite';
+import { NavbarComponent } from './components/layout/navbar/navbar.component';
+import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NavbarComponent, SidebarComponent ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'pdv-front';
+export class AppComponent implements OnInit {
+  title = 'web-app';
+
+  ngOnInit(): void {
+    initFlowbite();
+  }
 }
